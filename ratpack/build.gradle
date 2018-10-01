@@ -1,0 +1,20 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "io.ratpack:ratpack-gradle:1.5.4"
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+
+        classpath 'com.sun.activation:javax.activation:1.2.0'
+    }
+}
+
+apply plugin: "io.ratpack.ratpack-java"
+apply plugin: 'com.github.johnrengelman.shadow'
+
+repositories {
+    jcenter()
+}
+
+mainClassName = 'ris58h.webrecfib.ratpack.App'
