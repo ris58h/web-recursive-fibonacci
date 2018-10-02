@@ -5,16 +5,14 @@ const port = 8080
 http.createServer(function (req, res) {
     const n = parseInt(req.url.substring(1))
     if (n < 2) {
-        res.write('' + n)
-        res.end()
+        res.end('' + n)
     } else {
         Promise.all([
             fibonacci(n - 1),
             fibonacci(n - 2)
         ]).then(function (ns) {
             const fibN = ns[0] + ns[1]
-            res.write('' + fibN)
-            res.end()
+            res.end('' + fibN)
         })
     }
 }).listen(port)
